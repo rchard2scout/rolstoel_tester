@@ -29,8 +29,8 @@ class middle_value:
 
 def main():
   mv = middle_value()
-  rospy.init_node('listener', anonymous=True)
-  rospy.loginfo("Initialized listener")
+  rospy.init_node('tester', anonymous=True)
+  rospy.loginfo("Initialized tester")
   try:
     rospy.spin()
   except KeyboardInterrupt:
