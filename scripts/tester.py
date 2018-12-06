@@ -28,14 +28,11 @@ class middle_value_distance:
         rospy.logdebug(rospy.get_caller_id() +
                        " Rows: %d\tCols: %d", rows, cols)
 
-        middlerow = rows/2
-        middlecol = cols/2
-        middlevalue = cv_image[middlecol, middlerow]
-        rospy.loginfo("middle value: %d", middlevalue)
+        rospy.loginfo("d: %d", cv_image[rows/2, cols/2])
 
 
 def main():
-    mv = middle_value()
+    middle_value_distance()
     rospy.init_node('tester', anonymous=True)
     rospy.loginfo("Initialized tester")
     try:
