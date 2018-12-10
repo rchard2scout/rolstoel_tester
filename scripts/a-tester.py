@@ -20,9 +20,9 @@ class middle_value_distance:
                        data.header.stamp,
                        data.encoding)
         try:
-                cv_image = self.bridge.imgmsg_to_cv2(data, "16UC1")
+            cv_image = self.bridge.imgmsg_to_cv2(data, "16UC1")
         except CvBridgeError as e:
-                rospy.logerr(e)
+            rospy.logerr(e)
 
         (rows, cols) = cv_image.shape
         rospy.logdebug(rospy.get_caller_id() +
