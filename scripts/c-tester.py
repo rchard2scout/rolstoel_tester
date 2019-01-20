@@ -19,10 +19,10 @@ class transform_rotate:
             rospy.loginfo("t = %s", t)
             pos, quat = self.tf.lookupTransform("/camera_rgb_optical_frame",
                                                 "/map", t)
-            eul = tf.transformations.euler_from_quaternion(quat)
-            rospy.logdebug("pos: %s\teuler: %s", pos, eul)
+            (roll, pitch, yaw) = tf.transformations.euler_from_quaternion(quat)
+#            rospy.logdebug("pos: %s\teuler: %s", pos, eul)
             rospy.loginfo("x: %.5f\ty: %.5f\tz: %.5f", pos[0], pos[1], pos[2])
-            rospy.loginfo("r: %.5f\tp: %.5f\ty: %.5f", eul[0], eul[1], eul[2])
+            rospy.loginfo("r: %.5f\tp: %.5f\ty: %.5f", roll, pitch, yaw)
         else:
             rospy.logerr("One of the frames doesn't exist.")
 
